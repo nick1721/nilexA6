@@ -22,6 +22,8 @@ public class TreasureHunter : MonoBehaviour
 
     public GameObject playerCamera;
 
+    public GameObject cagePrefab;
+
     public collectible collectedItem;
 
     public int numOfItems = 0;
@@ -141,7 +143,12 @@ public class TreasureHunter : MonoBehaviour
             if (rightPointerObject.transform.position.y < (playerCamera.transform.position.y - 0.6) && rightPointerObject.transform.position.y > (playerCamera.transform.position.y - 1.2)) {                    
                 GameObject objGrabbed = Resources.Load<GameObject>(thingIGrabbed.name);
                 collectible currentCollectible = objGrabbed.gameObject.GetComponent<collectible>();
-                if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
+
+                if (currentCollectible.name =="Trap")
+                {
+                    spawnCage();
+                }
+                else if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
                     {
                         inventory.itemsCollected[currentCollectible]++;
                     } 
@@ -170,6 +177,9 @@ public class TreasureHunter : MonoBehaviour
         
     }
 
+    public void spawnCage() {
+        Instantiate(cagePrefab, new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y + 2, playerCamera.transform.position.z), Quaternion.identity);
+    }
 
     //since Unity doesn't have sceneComponents like UE4, we can only attach GOs to other GOs which are children of another GO
     //e.g. attach collectible to controller GO, which is a child of VRRoot GO

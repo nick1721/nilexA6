@@ -7,5 +7,4 @@ public class collectible : MonoBehaviour
 {
     public int points;
     public string name;
-    
 }
