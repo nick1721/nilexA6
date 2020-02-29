@@ -178,7 +178,9 @@ public class TreasureHunter : MonoBehaviour
     }
 
     public void spawnCage() {
-        Instantiate(cagePrefab, new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y + 2, playerCamera.transform.position.z), Quaternion.identity);
+        //Instantiate(cagePrefab, new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y + 2, playerCamera.transform.position.z), Quaternion.identity);
+        Instantiate(cagePrefab, new Vector3(-36, 4, 12), Quaternion.identity);
+
     }
 
     //since Unity doesn't have sceneComponents like UE4, we can only attach GOs to other GOs which are children of another GO
