@@ -8351,6 +8351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &687192852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8412,6 +8413,8 @@ PrefabInstance:
 >>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
 =======
 >>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+>>>>>>> fa45967cb98f82eb0e2edc6265a1f6c66cc4763b
 --- !u!1001 &689573729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24180,6 +24183,7 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 29
 =======
       value: 27
@@ -24187,6 +24191,9 @@ PrefabInstance:
 =======
       value: 27
 >>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+      value: 27
+>>>>>>> fa45967cb98f82eb0e2edc6265a1f6c66cc4763b
       objectReference: {fileID: 0}
     - target: {fileID: 7925929904147671680, guid: f546dccc1a0084be1806522637e846b5,
         type: 3}
