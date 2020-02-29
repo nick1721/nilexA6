@@ -7186,6 +7186,8 @@ MonoBehaviour:
   scoreSummary: {fileID: 1186611186}
   itemSummary: {fileID: 1870601620}
   playerCamera: {fileID: 511477290}
+  cagePrefab: {fileID: 5157368638085380912, guid: 66e9bd279bf1a3f4dbca3623e222e9b5,
+    type: 3}
   collectedItem: {fileID: 0}
   numOfItems: 0
   collectiblesMask:
@@ -8253,7 +8255,12 @@ Transform:
   m_PrefabInstance: {fileID: 673851286}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> e8588c5658916a131c611ac6fa2eb05454dd751f
 --- !u!1001 &687192852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8295,7 +8302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245667109356128, guid: c95e0289b2704c6428ef68c5380cfd03, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 2
+=======
+      value: 3
+>>>>>>> e8588c5658916a131c611ac6fa2eb05454dd751f
       objectReference: {fileID: 0}
     - target: {fileID: 4245667109356128, guid: c95e0289b2704c6428ef68c5380cfd03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8311,7 +8322,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95e0289b2704c6428ef68c5380cfd03, type: 3}
+<<<<<<< HEAD
 >>>>>>> parent of e6a198b... Hamster Cage
+=======
+=======
+>>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+>>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+>>>>>>> fa45967cb98f82eb0e2edc6265a1f6c66cc4763b
+>>>>>>> e8588c5658916a131c611ac6fa2eb05454dd751f
 --- !u!1001 &689573729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24078,7 +24098,19 @@ PrefabInstance:
     - target: {fileID: 7925929904147671680, guid: f546dccc1a0084be1806522637e846b5,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      value: 29
+=======
       value: 27
+>>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+      value: 27
+>>>>>>> bb46cf05d028c8c3dc95713352f3ab186ccbd6f8
+=======
+      value: 27
+>>>>>>> fa45967cb98f82eb0e2edc6265a1f6c66cc4763b
       objectReference: {fileID: 0}
     - target: {fileID: 7925929904147671680, guid: f546dccc1a0084be1806522637e846b5,
         type: 3}
@@ -27300,12 +27332,12 @@ PrefabInstance:
     - target: {fileID: 7982642124937648413, guid: 66e9bd279bf1a3f4dbca3623e222e9b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.639065
+      value: -39.76
       objectReference: {fileID: 0}
     - target: {fileID: 7982642124937648413, guid: 66e9bd279bf1a3f4dbca3623e222e9b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6415442
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 7982642124937648413, guid: 66e9bd279bf1a3f4dbca3623e222e9b5,
         type: 3}
@@ -27351,6 +27383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982642124937648413, guid: 66e9bd279bf1a3f4dbca3623e222e9b5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66e9bd279bf1a3f4dbca3623e222e9b5, type: 3}
