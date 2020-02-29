@@ -22,7 +22,6 @@ public class TreasureHunter : MonoBehaviour
 
     public GameObject playerCamera;
 
-    public GameObject cagePrefab;
 
     public collectible collectedItem;
 
@@ -36,45 +35,22 @@ public class TreasureHunter : MonoBehaviour
 
     public enum AttachmentRule{KeepRelative, KeepWorld, SnapToTarget}
 
+    public GameObject cameraRig;
+
+    public GameObject playerController;
+
+    bool launched = false;
+    
+
     // Update is called once per frame
     void Update()
     {
-    /*    int layerMask = 1 << 10;
-        layerMask = ~layerMask;
-
-//test comment
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out outHit, 100.0f, layerMask))
-            {              
-                if (Input.GetKeyDown("e")) 
-                {                  
-                    Debug.Log("Pressed e");  
-                    collectedItem = outHit.collider.gameObject.GetComponent<collectible>();
-                    if ((collectedItem.name == "Cube")||(collectedItem.name == "Cylinder")||(collectedItem.name == "Capsule")) 
-                    {   
-                        GameObject objSelected = (GameObject)Resources.Load(GetGameObjectPath(collectedItem), typeof(GameObject));
-                        collectible currentCollectible = objSelected.gameObject.GetComponent<collectible>();
-                        if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
-                        {
-                            inventory.itemsCollected[currentCollectible]++;
-                        } 
-                        else 
-                        {
-                            inventory.itemsCollected.Add(currentCollectible, 1);
-                        }
-                        score = score + currentCollectible.points;
-                        numOfItems++;
-                    }                        
-                    Destroy(outHit.collider.gameObject); 
-                    }                  
-            }      
-            scoreSummary.text = "Your Score: " + score;         
-            itemSummary.text = "Number of Items: " + numOfItems;    
-            */
+        Vector3 playerPosition = playerCamera.transform.position;
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)){ 
 
             // "Force Grab Distance";
             forceGrab(true);
-            Instantiate(Resources.Load("Cage"), new Vector3(-36, 4, 12), Quaternion.identity);
+            
           
         } else if (OVRInput.GetDown(OVRInput.RawButton.A)){
             // "Grip";
@@ -105,6 +81,8 @@ public class TreasureHunter : MonoBehaviour
             }
         }
         previousPointerPos=rightPointerObject.gameObject.transform.position;
+
+
     } 
 
     collectible getClosestHitObject(Collider[] hits){ 
@@ -139,6 +117,7 @@ public class TreasureHunter : MonoBehaviour
 
    
     void letGo(){
+        Vector3 playerPosition = playerCamera.transform.position;
         if (thingIGrabbed){
 
             if (rightPointerObject.transform.position.y < (playerCamera.transform.position.y - 0.6) && rightPointerObject.transform.position.y > (playerCamera.transform.position.y - 1.2)) {                    
@@ -146,10 +125,16 @@ public class TreasureHunter : MonoBehaviour
                 collectible currentCollectible = objGrabbed.gameObject.GetComponent<collectible>();
 
                 if (currentCollectible.name =="Trap")
+                {               
+                    cameraRig.GetComponent<Rigidbody>().isKinematic = false;
+                    scoreSummary.text = "YOU'VE BEEN CURSED!" + '\n' + "Get to the minivan to reverse the curse!";
+                } 
+                else if (currentCollectible.name == "Christ")
                 {
-                    // call thing
+                    cameraRig.GetComponent<Rigidbody>().isKinematic = true;
                 }
-                else if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
+                else {
+                    if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
                     {
                         inventory.itemsCollected[currentCollectible]++;
                     } 
@@ -162,9 +147,11 @@ public class TreasureHunter : MonoBehaviour
                     scoreSummary.text = "Nick & Alex's Score: " + score + "\n" +
                                         "# of items: " + numOfItems;
                     itemSummary.text = " ";
-                foreach (KeyValuePair<collectible, int> item in inventory.itemsCollected) {
-                    itemSummary.text += "\n # of " + item.Key.name + ": " + item.Value + ", Item Value: " + item.Key.points; 
+                    foreach (KeyValuePair<collectible, int> item in inventory.itemsCollected) {
+                        itemSummary.text += "\n # of " + item.Key.name + ": " + item.Value + ", Item Value: " + item.Key.points; 
+                    }   
                 }
+                
                 detachGameObject(thingIGrabbed.gameObject,AttachmentRule.KeepWorld,AttachmentRule.KeepWorld,AttachmentRule.KeepWorld);
                 simulatePhysics(thingIGrabbed.gameObject,(rightPointerObject.gameObject.transform.position-previousPointerPos)/Time.deltaTime,true);
                 Destroy(thingIGrabbed.gameObject);
@@ -241,3 +228,4 @@ public class TreasureHunter : MonoBehaviour
             
     }  
 }
+
