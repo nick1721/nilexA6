@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/FirstPersion AIO Pack/DemoScene/Scene/Demo.unity
-    guid: fd0d62a9201f1294b9e233356fabacfa
+    path: Assets/UnityA6.unity
+    guid: 7cf5f7e0a1bef4ff0bfee8854bf62670
   m_configObjects: {}
