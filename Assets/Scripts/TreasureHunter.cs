@@ -74,6 +74,7 @@ public class TreasureHunter : MonoBehaviour
 
             // "Force Grab Distance";
             forceGrab(true);
+            Instantiate(Resources.Load("Cage"), new Vector3(-36, 4, 12), Quaternion.identity);
           
         } else if (OVRInput.GetDown(OVRInput.RawButton.A)){
             // "Grip";
@@ -146,7 +147,7 @@ public class TreasureHunter : MonoBehaviour
 
                 if (currentCollectible.name =="Trap")
                 {
-                    spawnCage();
+                    // call thing
                 }
                 else if (inventory.itemsCollected.ContainsKey(currentCollectible)) 
                     {
@@ -177,12 +178,12 @@ public class TreasureHunter : MonoBehaviour
         
     }
 
-    public void spawnCage() {
+    //public void spawnCage() {
         
         //Instantiate(cagePrefab, new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y + 2, playerCamera.transform.position.z), Quaternion.identity);
-        Instantiate(Resources.Load("Cage"), new Vector3(-36, 4, 12), Quaternion.identity);
+        //Instantiate(Resources.Load("Cage"), new Vector3(-36, 4, 12), Quaternion.identity);
 
-    }
+    //}
 
     //since Unity doesn't have sceneComponents like UE4, we can only attach GOs to other GOs which are children of another GO
     //e.g. attach collectible to controller GO, which is a child of VRRoot GO
