@@ -21,5 +21,4 @@
         <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
         <meta-data android:name="com.samsung.android.vr.application.mode" android:value="vr_only"/>
     </application>
-    <uses-feature android:name="android.hardware.vr.headtracking" android:required="true" android:version="1" />
 </manifest>
